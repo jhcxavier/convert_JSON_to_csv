@@ -18,9 +18,49 @@ const getData = () => {
 
 }
 
+const mapping = [{
+    "ID":"id",
+    "Categories":"inventory_type",
+    "SubCategories":"build.model",
+    "Title":"heading",
+    "MarketValuePrice":"msrp",
+    "MSRPPrice":"ref_price",
+    "InternetPrice":"price",
+    "SKUStock":"stock_no",
+    "Vin":"vin",
+    "ImageURL":"media.photo_links.0",
+    "ProductPageURL":"vdp_url",
+    "Year":"build.year",
+    "Make":"build.make",
+    "Model":"build.model",
+    "Trim":"build.trim",
+    "BodyType":"build.body_type",
+    "DriveTrain":"build.drivetrain",
+    "EngineSize":"build.engine_size",
+    "Transmission":"build.transmission",
+    "InteriorColor":"interior_color",
+    "ExteriorColor":"exterior_color",
+    "MPG":"build.city_miles",
+    "Mileage":"miles"
+ }];
+
 const result = getData();
+const totals = result.num_found;
+const cars   = result.listings;
+
+
+const feed = cars.map( (car)=> {
+    return {
+        
+    }
+
+})
+
+
+
+
 const json2csvParser = new Parser();
-const csv = json2csvParser.parse(data.listings);
+const csv = json2csvParser.parse(feed);
 console.log(csv)
 
 fs.writeFile('mycsv.csv', csv, `utf8`, function (err) {
@@ -30,3 +70,35 @@ fs.writeFile('mycsv.csv', csv, `utf8`, function (err) {
         console.log(`saved`)//Everything went OK!
     }
 });
+
+
+/*
+
+
+        $this->mapping = array(
+            "ID"                    => "id",
+            "Categories"            => "inventory_type",
+            "SubCategories"         => "build.make",
+            "Title"                 => "heading",
+            "MarketValuePrice"      => "msrp",
+            "MSRPPrice"             => "ref_price",
+            "InternetPrice"         => "price",
+            "SKUStock"              => "stock_no",
+            "Vin"                   => "vin",
+            "ImageURL"              => "media.photo_links.0",
+            "ProductPageURL"        => "vdp_url",
+            "Year"                  => "build.year",
+            "Make"                  => "build.make",
+            "Model"                 => "build.model",
+            "Trim"                  => "build.trim",
+            "BodyType"              => "build.body_type",
+            "DriveTrain"            => "build.drivetrain",
+            "EngineSize"            => "build.engine_size",
+            "Transmission"          => "build.transmission",
+            "InteriorColor"         => "interior_color",
+            "ExteriorColor"         => "exterior_color",
+            "MPG"                   => "build.city_miles",
+            "Mileage"               => "miles"
+        );
+
+*/
