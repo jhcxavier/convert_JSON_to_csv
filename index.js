@@ -8,7 +8,7 @@ const getData = () => {
 
     return data;
     /*
-    fetch('http://api.marketcheck.com/v1/search?api_key=MfFyPylX5kyORzqjxXwbLLsleNwvcxU4&dealer_id=1004115', {
+    fetch('', {
         headers: {host: "marketcheck-prod.apigee.net"},
     })
     .then(res => res.json())
