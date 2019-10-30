@@ -18,7 +18,7 @@ const getData = () => {
 
 }
 
-const mapping = [{
+const mapping = {
     "ID":"id",
     "Categories":"inventory_type",
     "SubCategories":"build.model",
@@ -42,7 +42,7 @@ const mapping = [{
     "ExteriorColor":"exterior_color",
     "MPG":"build.city_miles",
     "Mileage":"miles"
- }];
+ };
 
 const result = getData();
 const totals = result.num_found;
@@ -51,7 +51,8 @@ const cars   = result.listings;
 
 const feed = cars.map( (car)=> {
     return {
-        
+        ID: car["id"],
+        vin: car.sku
     }
 
 })
