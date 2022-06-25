@@ -11,7 +11,7 @@
   "dependencies": {
     "flat": "^5.0.0",
     "json2csv": "^4.5.4",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "pg": "^7.12.1"
   }
 }
