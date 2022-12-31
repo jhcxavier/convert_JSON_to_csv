@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "flat": "^5.0.0",
+    "flat": "^5.0.1",
     "json2csv": "^4.5.4",
     "node-fetch": "^2.6.0",
     "pg": "^7.12.1"
